@@ -1,3 +1,4 @@
+// 闭包
 function outer(n) {
     function inner() {
         return n + 1;
