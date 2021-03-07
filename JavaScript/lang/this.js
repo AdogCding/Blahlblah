@@ -93,16 +93,16 @@ console.log(instance.name)
 /**
  * 
  */
-function return_single_value() {
+function get_single_value() {
     this.name = "Peter"
     return 1
 }
-function return_obj_value() {
+function get_obj_value() {
     this.name = "John"
     return {name:"Jessie"}
 }
-const instance1 = new return_single_value()
-const instance2 = new return_obj_value()
+const instance1 = new get_single_value()
+const instance2 = new get_obj_value()
 console.log(instance1.name) // peter， 没有区别
 console.log(instance2.name) // Jessie， 被返回的对象覆盖了
 /**
