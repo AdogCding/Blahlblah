@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>JAVA中的静态有两种含义： | AcodingDog的博客</title>
+    <meta name="generator" content="VuePress 1.9.9">
+    
+    <meta name="description" content="AcodingDog&#39;s Blog">
+    
+    <link rel="preload" href="/assets/css/0.styles.5ab8ebd7.css" as="style"><link rel="preload" href="/assets/js/app.de451bab.js" as="script"><link rel="preload" href="/assets/js/2.733019b2.js" as="script"><link rel="preload" href="/assets/js/9.df1a93d8.js" as="script"><link rel="prefetch" href="/assets/js/10.1679570e.js"><link rel="prefetch" href="/assets/js/11.c049ed3d.js"><link rel="prefetch" href="/assets/js/12.9f71c045.js"><link rel="prefetch" href="/assets/js/13.580ef795.js"><link rel="prefetch" href="/assets/js/14.f0f4cf97.js"><link rel="prefetch" href="/assets/js/15.03816e36.js"><link rel="prefetch" href="/assets/js/16.b0ce3394.js"><link rel="prefetch" href="/assets/js/17.dcb74dfa.js"><link rel="prefetch" href="/assets/js/18.a75be9aa.js"><link rel="prefetch" href="/assets/js/19.df905ba0.js"><link rel="prefetch" href="/assets/js/20.a671d8a7.js"><link rel="prefetch" href="/assets/js/21.b603061c.js"><link rel="prefetch" href="/assets/js/22.1e841dc4.js"><link rel="prefetch" href="/assets/js/23.a1ea9534.js"><link rel="prefetch" href="/assets/js/24.40cc36dd.js"><link rel="prefetch" href="/assets/js/25.91112dc0.js"><link rel="prefetch" href="/assets/js/26.a33ced16.js"><link rel="prefetch" href="/assets/js/27.1f97824e.js"><link rel="prefetch" href="/assets/js/28.f8e5be3f.js"><link rel="prefetch" href="/assets/js/3.f1f72003.js"><link rel="prefetch" href="/assets/js/4.fc333d27.js"><link rel="prefetch" href="/assets/js/5.bfef3080.js"><link rel="prefetch" href="/assets/js/6.2d0a63f8.js"><link rel="prefetch" href="/assets/js/7.0752621a.js"><link rel="prefetch" href="/assets/js/8.fe3b6d5b.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.5ab8ebd7.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">AcodingDog的博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="java中的静态有两种含义"><a href="#java中的静态有两种含义" class="header-anchor">#</a> JAVA中的静态有两种含义：</h1> <ul><li>静态方法与非静态方法</li> <li>静态绑定与动态绑定</li></ul> <h4 id="静态方法与非静态方法"><a href="#静态方法与非静态方法" class="header-anchor">#</a> 静态方法与非静态方法</h4> <ul><li>静态方法
+也叫作<strong>类方法</strong>，在调用时，无需指定是哪个实例在调用它，不能使用<strong>this</strong>和<strong>super</strong>关键字来调用</li> <li>非静态方法
+也叫作实例方法，在调用时，要指定是哪个实例在调用，可以使用<strong>this</strong>和<strong>super</strong>关键字</li></ul> <p>其中区分这两种方法最重要的一个点是是否能用this关键字，对于this关键字，规范中提到，它可以出现在以下几种场合</p> <ul><li>实例方法</li></ul> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token class-name">String</span> name <span class="token operator">=</span> <span class="token string">&quot;Demo&quot;</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">demo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>demo<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>实例的初始化器</li></ul> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token class-name">String</span> name<span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token class-name">Demo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+    <span class="token punctuation">{</span>
+        name <span class="token operator">=</span> <span class="token string">&quot;Demo&quot;</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>构造器</li></ul> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token class-name">String</span> name<span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token class-name">Demo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">&quot;Demo&quot;</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>实例变量的初始化器</li></ul> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token class-name">String</span> name <span class="token operator">=</span> <span class="token string">&quot;Demo&quot;</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token class-name">Demo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// do nothing</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>那么这些方法是如何拿到this实例的呢。JAVA中函数传递参数是通过局部变量区的内存，参数在这部分内存中是连续存放的，最开始的局部变量0就是调用者的引用。但是这种传递参数的方式是隐式的，在方法描述符中是无法看到实例的参数的。</p> <h4 id="静态绑定与与动态绑定"><a href="#静态绑定与与动态绑定" class="header-anchor">#</a> 静态绑定与与动态绑定</h4> <p>JAVA中存在三种多态</p> <ul><li>子类型多态（override）</li> <li>ad-hoc多态（overload）</li> <li>参数化多态（泛型）</li></ul> <p>JAVA中根据两种绑定方法可以分为两种函数</p> <ul><li>虚方法（动态绑定，或者叫迟绑定）</li> <li>非虚方法（静态绑定，或者叫早绑定）
+那么这种分类方法同（静态，动态）的分类有什么联系呢</li> <li>非虚方法包括：
+<ul><li>static修饰过的方法，也就是上文中提到过的静态方法</li> <li>private，final修饰过的方法（final有时会被inline处理）</li></ul></li> <li>虚方法包括：
+<ul><li>其他的方法</li></ul></li></ul> <p>那么构造器呢，根据规范，它无法继承也无法隐藏，不会参与到多态当中。
+同时，要注意构造器必须同new运算符同时使用，因为构造器只能负责实例的初始化，只有new运算符才会让JVM新建一个实例。</p> <h4 id="双分派与访问者模式"><a href="#双分派与访问者模式" class="header-anchor">#</a> 双分派与访问者模式</h4> <p>当使用JAVA的多态有一定的局限性。
+假如存在以下场景，一个父亲有一个儿子和一个女儿，当他拜访儿子的时候他会说“你好，儿子”，当他拜访女儿的时候他会说“你好，女儿”。
+此来创建一个Father类，如下</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Father</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">visit</span><span class="token punctuation">(</span><span class="token class-name">Son</span> son<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;Hi, son&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">visit</span><span class="token punctuation">(</span><span class="token class-name">Daughter</span> daughter<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;Hi daughter&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">visit</span><span class="token punctuation">(</span><span class="token class-name">Child</span> child<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>child <span class="token keyword">instanceof</span> <span class="token class-name">Daughter</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token function">visit</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token class-name">Daughter</span><span class="token punctuation">)</span> child<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            <span class="token function">visit</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token class-name">Son</span><span class="token punctuation">)</span> son<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>父亲的孩子们都继承一个公共的类</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Child</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+</code></pre></div><p>儿子类</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Son</span> <span class="token punctuation">{</span>
+
+<span class="token punctuation">}</span>
+</code></pre></div><p>女儿类</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Daughter</span> <span class="token punctuation">{</span>
+
+<span class="token punctuation">}</span>
+</code></pre></div><p>这个场景的主类</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">Father</span> father <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Father</span><span class="token punctuation">;</span>
+        <span class="token class-name">Child</span> son <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Son</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Child</span> daughter <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Daughter</span><span class="token punctuation">;</span>
+        father<span class="token punctuation">.</span><span class="token function">visit</span><span class="token punctuation">(</span>son<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        father<span class="token punctuation">.</span><span class="token function">visit</span><span class="token punctuation">(</span>daughter<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>当父亲要拜访的角色变多时，情况会更加复杂，这时，我们只能利用的是overload来实现分派方法。那么我们应该想办法用上子类型的多态，也就是使用访问者模式。反过来，我们让被访问者去接受访问者.
+场景的主类改成</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">Father</span> father <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Father</span><span class="token punctuation">;</span>
+        <span class="token class-name">Child</span> son <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Son</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Child</span> daughter <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Daughter</span><span class="token punctuation">;</span>
+        son<span class="token punctuation">.</span><span class="token function">accept</span><span class="token punctuation">(</span>father<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        daughter<span class="token punctuation">.</span><span class="token function">visit</span><span class="token punctuation">(</span>father<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>这样的话，儿子和女儿的类和他们的基类也要改写</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Child</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">accept</span><span class="token punctuation">(</span><span class="token class-name">Father</span> father<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>儿子类</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Son</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">accept</span><span class="token punctuation">(</span><span class="token class-name">Father</span> father<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        father<span class="token punctuation">.</span><span class="token function">visit</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>女儿类</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Daughter</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">accept</span><span class="token punctuation">(</span><span class="token class-name">Father</span> father<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        father<span class="token punctuation">.</span><span class="token function">visit</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>父亲类就可以写成</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Father</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">visit</span><span class="token punctuation">(</span><span class="token class-name">Son</span> son<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;Hi, son&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">visit</span><span class="token punctuation">(</span><span class="token class-name">Daughter</span> daughter<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;Hi daughter&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>可以看到，这里用到了两个条件来决定具体调用哪个方法</p> <ul><li><code>who.accept()</code></li></ul> <h4 id="参考"><a href="#参考" class="header-anchor">#</a> 参考</h4> <ul><li>https://www.iteye.com/blog/rednaxelafx-652719</li></ul></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.de451bab.js" defer></script><script src="/assets/js/2.733019b2.js" defer></script><script src="/assets/js/9.df1a93d8.js" defer></script>
+  </body>
+</html>

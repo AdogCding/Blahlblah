@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>工作两年半有感 | AcodingDog的博客</title>
+    <meta name="generator" content="VuePress 1.9.9">
+    
+    <meta name="description" content="AcodingDog&#39;s Blog">
+    
+    <link rel="preload" href="/assets/css/0.styles.5ab8ebd7.css" as="style"><link rel="preload" href="/assets/js/app.de451bab.js" as="script"><link rel="preload" href="/assets/js/2.733019b2.js" as="script"><link rel="preload" href="/assets/js/20.a671d8a7.js" as="script"><link rel="prefetch" href="/assets/js/10.1679570e.js"><link rel="prefetch" href="/assets/js/11.c049ed3d.js"><link rel="prefetch" href="/assets/js/12.9f71c045.js"><link rel="prefetch" href="/assets/js/13.580ef795.js"><link rel="prefetch" href="/assets/js/14.f0f4cf97.js"><link rel="prefetch" href="/assets/js/15.03816e36.js"><link rel="prefetch" href="/assets/js/16.b0ce3394.js"><link rel="prefetch" href="/assets/js/17.dcb74dfa.js"><link rel="prefetch" href="/assets/js/18.a75be9aa.js"><link rel="prefetch" href="/assets/js/19.df905ba0.js"><link rel="prefetch" href="/assets/js/21.b603061c.js"><link rel="prefetch" href="/assets/js/22.1e841dc4.js"><link rel="prefetch" href="/assets/js/23.a1ea9534.js"><link rel="prefetch" href="/assets/js/24.40cc36dd.js"><link rel="prefetch" href="/assets/js/25.91112dc0.js"><link rel="prefetch" href="/assets/js/26.a33ced16.js"><link rel="prefetch" href="/assets/js/27.1f97824e.js"><link rel="prefetch" href="/assets/js/28.f8e5be3f.js"><link rel="prefetch" href="/assets/js/3.f1f72003.js"><link rel="prefetch" href="/assets/js/4.fc333d27.js"><link rel="prefetch" href="/assets/js/5.bfef3080.js"><link rel="prefetch" href="/assets/js/6.2d0a63f8.js"><link rel="prefetch" href="/assets/js/7.0752621a.js"><link rel="prefetch" href="/assets/js/8.fe3b6d5b.js"><link rel="prefetch" href="/assets/js/9.df1a93d8.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.5ab8ebd7.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">AcodingDog的博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="工作两年半有感"><a href="#工作两年半有感" class="header-anchor">#</a> 工作两年半有感</h1> <p>无关风月，只谈工作。</p> <p>从2020年7月份入职至今已经过去了两个年头，还记得2020年刚入职的上半年，那个时候是我最开心的一段时间。从学校走上社会，进入到工作单位，人生开启了新的篇章，满心想要施展拳脚大干一场。
+如今的我，已经没有了刚入职时候的热血，现在我已经对这里失望透顶，想要离开。现在面对工作，就像在一潭死水边垂钓，恨不能马上收杆走人。</p> <p>从2020年的9月份到如今2022年的11月份，在费报项目组的泥潭中挣扎了两年多了，费报的业务可以直接的分为两个部分，一个是审批，一个是账务。审批包括单据正常的审批人之间的流转，加签，知会等流程操作，账务复杂很多，应收应付，各类单据的有不同的记账规则。框架简单但是实际业务非常复杂，而水平不高的开发者们，把本应去繁就简的逻辑搞的更加复杂。</p> <p>有几个特别典型的例子如：</p> <ol><li>喜欢用<code>Object</code>指针，尤其是<code>Map&lt;String, Object&gt;</code></li> <li>喜欢用各种<code>flag</code>值，在复杂的逻辑中夹杂着各种<code>if</code>判断，有些甚至作为参数传递到MyBatis中</li></ol> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">boolean</span> isGood <span class="token operator">=</span> <span class="token function">someFunc</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">{</span>
+    <span class="token comment">// something probaly change isGood value</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>isGood <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span><span class="token function">someComplexCheck</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// some logic</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ol start="3"><li>过于依赖数据库操作，<code>MyBatis</code>中包含大量的几百行甚至过千行的<code>SQL</code>语句，难以维护和优化</li></ol> <p>跟代码质量比起来的，更致命的问题是软件工程的质量</p> <ol><li>版本排期问题
+随着开发人员的减少，任务量却没有多少下降</li> <li>不重视测试
+作为交付质量兜底的环节，如今项目组的测试人员只有四名，面对每个版本一个人可能有多个功能点，测试质量堪忧，我就遇到过很多次很多常见的异常场景都测不到的情况，这种遗漏到生产上肯定会有大问题。
+而且测试操作依赖大量人工操作，效率很低，可能很久才能跑完全部的测试案例，而且没法做回归测试。</li></ol></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.de451bab.js" defer></script><script src="/assets/js/2.733019b2.js" defer></script><script src="/assets/js/20.a671d8a7.js" defer></script>
+  </body>
+</html>
