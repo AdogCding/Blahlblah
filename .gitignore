@@ -4,3 +4,4 @@
 *.out
 .idea
 node_modules
+docs/.vuepress/dist
