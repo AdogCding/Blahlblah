@@ -2,7 +2,7 @@
 
 <iframe src="http://www.acodingdog.site/DemoWebgl/web/HelloCanvas.html" height=400 width=400></iframe>
 
-效果如上图所示，H5标准提供了`canvas`标签，需要浏览器提供对应的支持，**WebGL**的效果就展示在这个元素上。
+效果如上图所示，H5标准提供了 `canvas`标签，需要浏览器提供对应的支持，**WebGL**的效果就展示在这个元素上。
 
 JavaScript代码如下
 
@@ -52,7 +52,7 @@ WebGL的运作流程同OpenGL类似，先通过JavaScript脚本准备好数据�
 
 就像OpenGL一样，有两种着色器，顶点着色器（vertex shader）和像素着色器（fragment shader/ pixel shader），他们需要在JavaScript中编译好，因此需要是一个JavaScript字符串。
 
-在顶点着色器中，有两个内置的变量``gl_Position``和``gl_PointSize``，``gl_Position``会把对应的位置当作一个顶点，然后光栅化。我们要画的点的位置定在画布中心，画布的中心也是WebGL坐标系的中心。
+在顶点着色器中，有两个内置的变量 ``gl_Position``和 ``gl_PointSize``，``gl_Position``会把对应的位置当作一个顶点，然后光栅化。我们要画的点的位置定在画布中心，画布的中心也是WebGL坐标系的中心。
 
 在像素着色器中，``gl_FragColor``内置变量表示顶点的颜色
 
@@ -70,7 +70,7 @@ function initShader(ctx, vs, fs) {
 }
 ```
 
-这里的`program`保存了`shader`编译后的信息，`createProgram`细节如下
+这里的 `program`保存了 `shader`编译后的信息，`createProgram`细节如下
 
 ```javascript
 function createProgram(ctx, vs, fs) {
@@ -98,7 +98,7 @@ function createProgram(ctx, vs, fs) {
 }
 ```
 
-在`createVertexShader`和`createFragmentShader`中，我们已经将shader编译好，得到了shaderObject，代码细节如下
+在 `createVertexShader`和 `createFragmentShader`中，我们已经将shader编译好，得到了shaderObject，代码细节如下
 
 ```javascript
 function createVertexShader(ctx, shaderSource) {
@@ -127,4 +127,4 @@ function createShaderObj(ctx, type, shaderSource) {
 }
 ```
 
-通过`attachShader`和`linkProgram`，我们已经准备好了运行渲染函数。渲染的数据存储在WebGL的COLOR_BUFFER_BIT中，每次绘图完成，我们都需要重置这个BUFFER，重置后我们运行`ctx.drawArrays(ctx.POINTS, 0, 1)`，表示，我们要画一个点，从第一个顶点开始，运行一次shader，我们的shader中只有一个点，最终的结果就是将这个点画出来。
+通过 `attachShader`和 `linkProgram`，我们已经准备好了运行渲染函数。渲染的数据存储在WebGL的COLOR_BUFFER_BIT中，每次绘图完成，我们都需要重置这个BUFFER，重置后我们运行 `ctx.drawArrays(ctx.POINTS, 0, 1)`，表示，我们要画一个点，从第一个顶点开始，运行一次shader，我们的shader中只有一个点，最终的结果就是将这个点画出来。
