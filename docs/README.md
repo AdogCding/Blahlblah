@@ -10,7 +10,13 @@
 
 ## 算法知识学习录
 
-- ### [用矩阵计算斐波那契数列](./learn-alg/%E7%94%A8%E7%9F%A9%E9%98%B5%E8%AE%A1%E7%AE%97%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97.md)
+- ### [用矩阵计算斐波那契数列](./learn-alg/用矩阵计算斐波那契数列.md)
+
+## 数据库使用录
+
+- ### [Postgres安装说明](./learn-db/postgresql-cookbook.md)
+
+- ### [如何在使用Postgres的with-clause防止无限循环](./learn-db/postgresql-rec.md)
 
 ## 图形学知识学习录
 
