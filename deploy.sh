@@ -5,4 +5,4 @@ if [ ! -d docs/.vuepress/dist/ ];then
     echo "run build cmd first!"
     exit 1
 fi
-cp -r docs/.vuepress/dist/ ~/dist/
+cp -r docs/.vuepress/dist/ ~/dist/ && echo "update blogs finished!"
