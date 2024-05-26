@@ -1,3 +1,5 @@
+git pull original
+
 if [ -d ~/dist ];then
     echo "remove deprecated dist" && rm -rf ~/dist
 fi
