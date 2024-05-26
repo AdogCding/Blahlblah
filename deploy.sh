@@ -1,4 +1,4 @@
-git pull original
+git pull origin
 
 if [ -d ~/dist ];then
     echo "remove deprecated dist" && rm -rf ~/dist
