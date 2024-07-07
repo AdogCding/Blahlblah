@@ -7,4 +7,4 @@ if [ ! -d docs/.vuepress/dist/ ];then
     echo "run build cmd first!"
     exit 1
 fi
-cp -r docs/.vuepress/dist/ ~/dist/ && echo "update blogs finished!"
+npm run docs:build && cp -r docs/.vuepress/dist/ ~/dist/ && echo "update blogs finished!"
