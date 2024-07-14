@@ -1,5 +1,9 @@
 # 我的博客
 
+## 自我介绍（abcdqwer!@#$%^&*）
+```
+wIJs05PHoF2sbKJXlyuXSnZEWKIMTFRsOjwpycHlvN72VzrfVuEndOUA+XKUoa5URQ7ome0vfPHl6PXF3jXjASwVtQMx17pH6KGinVr1Kd0hbFGGIbsItGClY8hptu6yD7Gy1pjEYCSJfdcTISxAL2Xzik6Tfny2LEBVDtPabKsllZZo4vEIA5A94sZA0q1OyE7VrDOZlODjfb9v6qJOa5UyqClmcMucsvgnUg7LzpifQv3j9XK1WF7FjzC3IZYq
+```
 ## 编程语言学习录
 
 - ### [Java](./learn-java/README.md)
