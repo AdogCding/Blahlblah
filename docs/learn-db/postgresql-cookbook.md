@@ -31,6 +31,10 @@ CREATE DATABASE mydatabase WITH OWNER = myuser;
 
 ### login in as whom you created
 psql -h localhost -d mydatabase -U myuser -p 5432
+
+### don't use a very complex password for ur very simple database
+### if you forget ur password
+ALTER USER yourusername WITH PASSWORD 'yournewpass';
 ```
 修改配置允许第三方ssh连接，原文见[网站](https://stackoverflow.com/questions/38466190/cant-connect-to-postgresql-on-port-5432)
 
