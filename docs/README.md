@@ -22,6 +22,9 @@ wIJs05PHoF2sbKJXlyuXSnZEWKIMTFRsOjwpycHlvN72VzrfVuEndOUA+XKUoa5URQ7ome0vfPHl6PXF
 
 - ### [如何在使用Postgres的with-clause防止无限循环](./learn-db/postgresql-rec.md)
 
+- ### [参加信息安全培训有感](./learn-db/data-protection.md)
+
+
 ## 图形学知识学习录
 
 记录一些图形学相关的知识
