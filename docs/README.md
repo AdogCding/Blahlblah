@@ -24,6 +24,7 @@ wIJs05PHoF2sbKJXlyuXSnZEWKIMTFRsOjwpycHlvN72VzrfVuEndOUA+XKUoa5URQ7ome0vfPHl6PXF
 
 - ### [参加信息安全培训有感](./learn-db/data-protection.md)
 
+- ### [Git停止跟踪某些文件](./program-tips/Git停止跟踪某些文件.md)
 
 ## 图形学知识学习录
 
